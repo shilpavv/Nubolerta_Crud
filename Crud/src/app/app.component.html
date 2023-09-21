@@ -1,0 +1,26 @@
+<header class="navbar" *ngIf="shouldShowNavbar()">
+  <nav class="d-flex justify-content-between align-items-center">
+    <ul class="nav-list">
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/employee">Employee</a></li>
+    </ul>
+    <ul class="nav-list d-flex align-items-center right">
+      <div class="col">
+        <div class="drop">
+          <div ngbDropdown placement="auto">
+            <button class="custom-dropdown-button" id="gfg" ngbDropdownToggle (click)="toggleDropdown()">
+              <i class="fas fa-list"></i>
+            </button>
+            <div class="custom-dropdown-menu" ngbDropdownMenu="gfg"> 
+              <button class="custom-dropdown-item" ngbDropdownItem><a (click)="logout()">Logout</a></button>
+              <!-- <button class="custom-dropdown-item custom-user-link" ngbDropdownItem><a routerLink="/user">User</a></button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </ul>
+  </nav>
+</header>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
